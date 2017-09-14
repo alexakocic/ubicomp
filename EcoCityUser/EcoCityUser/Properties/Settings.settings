@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EcoCityUser.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="UserInputId" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ServerURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://192.168.0.108:1026</Value>
+    </Setting>
+    <Setting Name="EntitiesApi" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/v2/entities</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
