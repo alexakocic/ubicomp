@@ -12,7 +12,7 @@ namespace EcoCityCsv
 
         public HttpClient GetHttpClient()
         {
-            var httpClient = new HttpClient { BaseAddress = new Uri("http://192.168.0.107:7896") };
+            var httpClient = new HttpClient { BaseAddress = new Uri("http://192.168.0.111:7896") };
 
             // clear default request headers
             httpClient.DefaultRequestHeaders.Accept.Clear();
@@ -34,12 +34,12 @@ namespace EcoCityCsv
             client = new HttpClient();
             var request = new HttpRequestMessage()
             {
-                RequestUri = new Uri($"http://192.168.0.107:7896/iot/d?k=sensorinputkey&i={fileName}"),
+                RequestUri = new Uri($"http://192.168.0.111:7896/iot/d?k=sensorinputkey&i={fileName}"),
                 Method = HttpMethod.Post
             };
 
             request.Content = new StringContent(textPlain);
-            request.Headers.Add("Fiware-Service", "EcoCity");
+            request.Headers.Add("Fiware-Service", "ecocity");
             request.Headers.Add("Fiware-ServicePath", "/");
 
 

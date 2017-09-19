@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="SensorDataPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">F:\SensorData</Value>
+      <Value Profile="(Default)">D:\fiware\Data</Value>
     </Setting>
     <Setting Name="TimeInterval" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5000</Value>

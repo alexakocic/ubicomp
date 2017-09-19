@@ -16,7 +16,7 @@ namespace EcoCityUser.Models
 
         private float GenerateLongitude()
         {
-            var random = new Random(1);
+            var random = new Random(DateTime.UtcNow.Millisecond);
             _initLong += (float)random.NextDouble() / 100;
 
             return _initLong;

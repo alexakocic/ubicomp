@@ -1,8 +1,0 @@
-F:\EcoCityCsv\EcoCityCsv\bin\Debug\EcoCityCsv.exe.config
-F:\EcoCityCsv\EcoCityCsv\bin\Debug\EcoCityCsv.exe
-F:\EcoCityCsv\EcoCityCsv\bin\Debug\EcoCityCsv.pdb
-F:\EcoCityCsv\EcoCityCsv\obj\Debug\EcoCityCsv.csprojResolveAssemblyReference.cache
-F:\EcoCityCsv\EcoCityCsv\obj\Debug\EcoCityCsv.exe
-F:\EcoCityCsv\EcoCityCsv\obj\Debug\EcoCityCsv.pdb
-F:\EcoCityCsv\EcoCityCsv\bin\Debug\RestSharp.dll
-F:\EcoCityCsv\EcoCityCsv\bin\Debug\RestSharp.xml

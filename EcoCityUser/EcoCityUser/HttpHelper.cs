@@ -52,7 +52,7 @@ namespace EcoCityUser
 
 
                 request.Content = new StringContent(json, Encoding.UTF8, "application/json");
-                request.Headers.Add("Fiware-Service", "EcoCity");
+                request.Headers.Add("Fiware-Service", "ecocity");
                 request.Headers.Add("Fiware-ServicePath", "/");
 
                 Console.WriteLine($"Api: {request.RequestUri}");
