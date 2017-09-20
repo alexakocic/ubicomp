@@ -11,5 +11,8 @@
     <Setting Name="ShortLetters" Type="System.String" Scope="User">
       <Value Profile="(Default)">opcsn</Value>
     </Setting>
+    <Setting Name="ApiURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://192.168.0.111:7896/iot/d?k=sensorinputkey&amp;i={0}</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

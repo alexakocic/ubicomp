@@ -1,49 +1,27 @@
 ﻿using System;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
 
 namespace EcoCityCsv
 {
     public class HttpHelper
     {
-        public HttpClient client;
-
-        public HttpClient GetHttpClient()
-        {
-            var httpClient = new HttpClient { BaseAddress = new Uri("http://192.168.0.111:7896") };
-
-            // clear default request headers
-            httpClient.DefaultRequestHeaders.Accept.Clear();
-
-            // accept json response
-            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            // set timeout to 30 secs
-            httpClient.Timeout = TimeSpan.FromSeconds(30);
-
-            // add unique request id
-            httpClient.DefaultRequestHeaders.Add("X-Request-ID", Guid.NewGuid().ToString());
-
-            return httpClient;
-        }
+        private HttpClient _client;
 
         public async void PostSensorData(string textPlain, string fileName)
         {
-            client = new HttpClient();
-            var request = new HttpRequestMessage()
+            _client = new HttpClient();
+            var request = new HttpRequestMessage
             {
-                RequestUri = new Uri($"http://192.168.0.111:7896/iot/d?k=sensorinputkey&i={fileName}"),
-                Method = HttpMethod.Post
+                RequestUri = new Uri(string.Format(Settings.Default.ApiURL, fileName)),
+                Method = HttpMethod.Post,
+                Content = new StringContent(textPlain)
             };
 
-            request.Content = new StringContent(textPlain);
             request.Headers.Add("Fiware-Service", "ecocity");
             request.Headers.Add("Fiware-ServicePath", "/");
 
 
-            var task = client.SendAsync(request);
+            var task = _client.SendAsync(request);
 
             var responseMessage = await task;
 
