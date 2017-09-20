@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EcoCityCsv
 {
@@ -13,11 +8,6 @@ namespace EcoCityCsv
         {
             CsvReader reader = new CsvReader();
             reader.StartReading();
-
-            //HttpHelper helper = new HttpHelper();
-            //helper.PostSensorData();
-
-
 
             Console.ReadLine();
         }

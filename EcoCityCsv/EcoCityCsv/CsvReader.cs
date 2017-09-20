@@ -55,8 +55,10 @@ namespace EcoCityCsv
 
                 var fileStream = sensorFile.BaseStream as FileStream;
                 
-                //Console.WriteLine(line);
-                SendDataToOrion(line, System.IO.Path.GetFileNameWithoutExtension(fileStream.Name));
+                if (fileStream != null)
+                {
+                    SendDataToOrion(line, Path.GetFileNameWithoutExtension(fileStream.Name));
+                }
             }
         }
 
