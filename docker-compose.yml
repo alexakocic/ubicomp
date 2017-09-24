@@ -1,0 +1,70 @@
+mongo:
+   image: mongo:3.2
+   hostname: mongo
+   container_name: mongo
+   expose:
+        - "27017"
+   command: --nojournal
+orion:
+   image: fiware/orion
+   hostname: orion
+   container_name: orion
+   links:
+     - mongo
+   expose:
+     - "1026"
+   ports:
+     - "1026:1026"
+   command: -dbhost mongo
+idas:
+   image: fiware/iotagent-ul:develop
+   hostname: idas
+   container_name: idas
+   links:
+        - mongo:mongo
+        - orion
+   expose:
+        - "7896"
+        - "4041"
+   ports:
+        - "7896:7896"
+        - "4041:4041"
+proton:
+   image: fiware/proactivetechnologyonline
+   hostname: proton
+   container_name: proton
+   links:
+      - orion
+   expose:
+      - "8080"
+   ports:
+      - "8080:8080"
+mysql:
+    image: mysql:5.5
+    hostname: mysql
+    container_name: mysql
+    expose:
+        - "3306"
+    environment:
+        - MYSQL_ROOT_PASSWORD=mysql
+
+cygnus:
+    image: fiware/cygnus-ngsi:develop
+    hostname: cygnus
+    container_name: cygnus
+    links:
+        - orion
+        - mysql:iot-mysql
+    expose:
+        - "5050"
+    environment:
+        - CYGNUS_MYSQL_USER=root
+        - CYGNUS_MYSQL_PASS=mysql
+
+wirecloud:
+   image: fiware/wirecloud
+   hostname: wirecloud
+   container_name: wirecloud
+   links:
+        - orion
+
